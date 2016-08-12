@@ -44,23 +44,6 @@
 		</div>
 		<div id="server-container"></div>
 
-		<!-- legenda of graphs (again) -->
-		<div class="row">
-			<div class="col-md-4 col-md-offset-2">
-				<div class="well well-xs">
-					<div class="donut">
-						<div class="title" data-i18n="times.Last 24 hr">Last 24 hr</div>
-					</div>
-					<div class="donut">
-						<div class="title" data-i18n="times.Last 30 days">Last 30 days</div>
-					</div>
-					<div class="donut">
-						<div class="title" data-i18n="times.Last year">Last year</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<!-- modal windows-->
 		<div class="modal fade" id="modal-about">
 			<div class="modal-dialog">
@@ -113,26 +96,10 @@
 	<script type="template/mustache" id="server-template">
 		<div class="well {{alert}}">
 			<div class="row">
-				<div class="col-md-4">
-					<h2>
-						{{friendlyname}}
-						<span class="label label-status label-{{label}}"><i class="{{statusicon}}"></i></span>
-					</h2>
-					<div class="log{{id}} hide">
-						<ul class="list-unstyled">
-							{{#log}}
-								<li>
-									<span class="btn btn-xs btn-{{labeltype}}"><i class="icon-{{typeicon}} icon-white"></i></span>
-									&nbsp;{{datetime}}
-								</li>
-							{{/log}}
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-8 graphs">
+				<div class="col-md-12 graphs">
 					{{#charts}}
 						<div class="donut">
-							<canvas width="75" height="75" uptime="{{uptime}}"></canvas>
+							<canvas width="30" height="30" uptime="{{uptime}}"></canvas>
 							<div class="uptime">
 								{{uptime}}%
 							</div>
